@@ -5,36 +5,16 @@
  * @format
  */
 
-import {
-    SafeAreaView,
-    ScrollView,
-    StatusBar,
-    Text,
-    useColorScheme,
-} from 'react-native';
-
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+import { Provider } from 'react-redux';
 import React from 'react';
+import AppRoutes from './src/routes';
+import store from './src/store/root/config.store';
 
 function App(): JSX.Element {
-    const isDarkMode = useColorScheme() === 'dark';
-
-    const backgroundStyle = {
-        backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-    };
-
     return (
-        <SafeAreaView style={backgroundStyle}>
-            <StatusBar
-                barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-                backgroundColor={backgroundStyle.backgroundColor}
-            />
-            <ScrollView
-                contentInsetAdjustmentBehavior="automatic"
-                style={backgroundStyle}>
-                <Text>Hello Sathish</Text>
-            </ScrollView>
-        </SafeAreaView>
+        <Provider store={store}>
+            <AppRoutes />
+        </Provider>
     );
 }
 

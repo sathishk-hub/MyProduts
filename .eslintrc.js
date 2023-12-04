@@ -48,5 +48,9 @@ module.exports = {
         'react-native/no-color-literals': 'error',
         'react-native/no-raw-text': 'error',
         'react-native/no-single-element-style-arrays': 'error',
+        '@typescript-eslint/explicit-function-return-type': 'off',
+        'react/prop-types': 'off',
+        'react-hooks/exhaustive-deps': 'off',
+        'no-unsafe-optional-chaining': 'off',
     },
 };
